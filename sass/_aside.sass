@@ -1,0 +1,142 @@
+aside
+  background-color: #222222
+  transition-delay: .5s
+  overflow: hidden
+  .sheet
+    width: 80%
+    max-width: 700px
+    padding: 65px 0 35px
+    margin: 0 auto
+    .h1-headers
+      +h1Headers()
+      color: #E5A748
+      transform: translateX(100vw)
+      opacity: 0
+      transition: .75s
+    .form
+      padding-top: 15px
+      color: #E5A748
+      .form-row
+        display: block
+        width: 80%
+        margin: 0 auto
+        padding-top: 15px
+        label
+          margin: 5px 0
+          font-size: 1.2rem
+        input[type=text], textarea
+          display: block
+          width: 100%
+          padding: 10px
+          margin-top: 4px
+          box-shadow: 0 1px 5px #eee
+          border: 1px solid #eee
+          border-radius: 5px
+          font-size: 1.4rem
+          color: #282828
+          font-family: 'Roboto', sans-serif
+          &:focus
+            border-color: $mainColor
+            box-shadow: 2px 2px 5px $mainColor
+            outline: none
+        textarea
+          height: 90px
+        .btn-submit
+          position: relative
+          display: block
+          width: 45%
+          margin: 15px auto
+          padding: 10px
+          background-color: transparent
+          color: $buttonColor
+          border: 2px solid $buttonColor
+          border-radius: 20px
+          font-size: 1.4rem
+          font-weight: bold
+          text-transform: uppercase
+          cursor: pointer
+          transition: .4s
+          z-index: 5
+          &:hover
+            color: white
+          &::after
+            content: ''
+            position: absolute
+            top: 0
+            height: 100%
+            left: 50%
+            right: 50%
+            opacity: 0
+            background-color: $buttonColor
+            z-index: -2
+            transition: .4s
+          &:hover::after
+            left: -1px
+            right: -1px
+            opacity: 1
+            border-radius: 17px
+
+#send-form-status
+  display: none
+  padding: 10px
+
+.status-ok
+  color: $okColor
+
+.status-err
+  color: $errorColor
+
+@media (min-width: 500px)
+  aside
+    .sheet
+      width: 70%
+      padding-top: 75px
+      .form
+        padding-top: 30px
+        .form-row
+          label
+            font-size: 1.3rem
+          input[type=text], textarea
+            font-size: 1.5rem
+          .btn-submit
+            font-size: 1.5rem
+
+@media (min-width: 700px)
+  aside
+    .sheet
+      width: 65%
+      padding: 90px 0 60px
+      .form
+        .form-row
+          padding-top: 20px
+          .btn-submit
+            font-size: 1.6rem
+
+@media (min-width: 1000px)
+  aside
+    .sheet
+      padding: 100px 0 80px
+      .form
+        .form-row
+          padding-top: 20px
+          .btn-submit
+            transition: .3s
+            margin-top: 25px
+
+@media (min-width: 1300px)
+  aside
+    .sheet
+      padding: 120px 0 100px
+      .form
+        .form-row
+          .btn-submit
+            padding: 12px
+            margin-top: 30px
+            font-size: 1.7rem
+
+//animacje
+aside
+  .sheet
+    .h1-headers.active
+      transform: translateX(0)
+      opacity: 1

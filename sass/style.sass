@@ -1,0 +1,36 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 10px
+  font-family: 'Roboto', sans-serif
+
+body
+  min-height: 100vh
+
+.clearfix
+  content: ""
+  display: block
+  clear: both
+
+.blank
+  position: fixed
+  width: 0
+  height: 100vh
+  background-color: transparent
+  transition: 0s
+  z-index: 1
+  transition-delay: .8s
+  &.change
+    width: 100%
+
+@import 'variables'
+@import 'mixins'
+@import 'nav'
+@import 'header'
+@import 'banner'
+@import 'main'
+@import 'aside'
+@import 'footer'

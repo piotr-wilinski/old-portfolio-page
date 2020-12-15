@@ -1,0 +1,72 @@
+.banner
+  position: relative
+  top: 65px
+  width: 100%
+  height: calc(100vh - 55px)
+  transition-delay: .5s
+  // background-color: $mainColor
+  background-image: linear-gradient(to bottom right, $secondColor, $secondColor, $mainColor, $mainColor)
+  .background
+    width: 100%
+    height: 100%
+    background-image: url(../images/baner.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    filter: blur(2px)
+    opacity: .7
+  h1
+    position: absolute
+    top: 50%
+    left: 10%
+    right: 10%
+    transform: translateY(-50%)
+    color: #eee
+    font-size: 3rem
+    text-align: center
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, .7)
+    text-transform: uppercase
+    span
+      display: block
+      padding: 10px 0
+      &:first-of-type
+        letter-spacing: 2px
+      &:last-of-type
+        font-size: 2.5rem
+        font-weight: normal
+        color: #ddd
+
+@media (min-width: 700px)
+  .banner
+    h1
+      font-size: 3.5rem
+      span:last-of-type
+        font-size: 2.7
+
+@media (min-width: 1000px)
+  .banner
+    h1
+      font-size: 4.5rem
+      span:first-of-type
+        letter-spacing: 3px
+      span:last-of-type
+        font-size: 3rem
+
+//   .raf
+//     +banerPositionPortrait()
+//     top: 0
+//     background-color: $secondColor
+//   .pit
+//     +banerPositionPortrait()
+//     top: 50%
+//     background-color: $mainColor
+
+// @media (orientation: landscape)
+//   .banner
+//     .raf
+//       +banerPositionLandscape()
+//     .pit
+//       +banerPositionLandscape()
+//       top: 0
+//       left: 50%

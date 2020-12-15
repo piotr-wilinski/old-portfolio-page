@@ -1,0 +1,175 @@
+.navigation
+  position: fixed
+  top: 0
+  left: 0
+  height: 65px
+  width: 100%
+  line-height: 65px
+  z-index: 2
+  font-family: 'Lato', sans-serif
+  .icon
+    position: fixed
+    top: 22px
+    right: 20px
+    width: 30px
+    height: 20px
+    cursor: pointer
+    .bar1, .bar2, .bar3
+      position: absolute
+      width: 30px
+      height: 4px
+      background-color: $mainColor
+      border-radius: 4px
+      transition: .5s
+    .bar1
+      top: 0
+    .bar2
+      top: 50%
+      transform: translateY(-50%)
+    .bar3
+      top: 100%
+      transform: translateY(-100%)
+  .change
+    .bar1
+      top: 50%
+      transform: rotate(-45deg)
+    .bar2
+      opacity: 0
+    .bar3
+      top: 50%
+      transform: rotate(45deg)
+  .menu
+    position: fixed
+    top: 65px
+    width: 100%
+    transition: .5s
+    ul
+      display: flex
+      flex-direction: column
+      list-style: none
+      overflow: hidden
+      .m1
+        transition: .5s
+        transform: translateX(100%)
+      .m2
+        transition: .6s
+        transform: translateX(100%)
+      .m3
+        transition: .7s
+        transform: translateX(100%)
+      .m4
+        transition: .8s
+        transform: translateX(100%)
+      li
+        a
+          display: block
+          width: 100%
+          padding-left: 10%
+          line-height: 50px
+          font-size: 1.4rem
+          text-transform: uppercase
+          border-bottom: 1px solid #402E14
+          color: $fontReverseColor
+          background-color: rgba(0, 0, 0, .8)
+          text-decoration: none
+          letter-spacing: 1px
+          .p
+            color: $mainColor
+          .r
+            color: $secondColor
+        &:last-child
+          a
+            border: none
+  .menu.change
+    ul
+      .m1, .m2, .m3, .m4
+        transform: translateX(0)
+        
+  
+@media (min-width: 1000px)
+  .navigation
+    left: 30%
+    .icon
+      display: none
+    .menu
+      height: 65px
+      left: 30%
+      top: 0
+      width: 65%
+      ul
+        flex-direction: row
+        .m1, .m2, .m3, .m4
+          transition: 0
+          transform: translateX(0)
+        li
+          flex-grow: 1
+          a
+            position: relative
+            width: auto
+            border: none
+            padding: 0
+            line-height: 65px
+            background-color: transparent
+            text-align: center
+            &:hover
+              animation: textHover .2s linear
+              color: $mainColor
+              .p
+                color: $secondColor
+              .r
+                color: $mainColor
+            &::after
+              content: ""
+              display: block
+              position: absolute
+              bottom: 0px
+              left: 50%
+              transform: translateX(-50%)
+              height: 2px
+              width: 0
+              background-color: $mainColor
+              z-index: 1
+              transition: .3s
+            &:hover::after
+              animation: textAntyHover .2s linear
+              width: 75%
+
+@media (min-width: 1300px)
+  .navigation
+    .menu
+      left: 35%
+      width: 60%
+
+@media (min-width: 1500px)
+  .navigation
+    .menu
+      left: 40%
+      width: 55%
+
+@keyframes textHover
+  0%
+    transform: translateY(0)
+  33%
+    transform: translateY(0)
+  34%
+    transform: translateY(2px)
+  67%
+    transform: translateY(2px)
+  68%
+    transform: translateY(-2px)
+  100%
+    transform: translateY(-2px)
+
+@keyframes textAntyHover
+  0%
+    transform: translate(-50%, 0)
+  33%
+    transform: translate(-50%, 0)
+  34%
+    transform: translate(-50%, -2px)
+  67%
+    transform: translate(-50%, -2px)
+  68%
+    transform: translate(-50%, 2px)
+  100%
+    transform: translate(-50%, 2px)
